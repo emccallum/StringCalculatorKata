@@ -10,7 +10,10 @@ import java.io.PrintStream
 class StringCalculator {
 
   def add(inputString: String): Int = {
-    0
+    if(!inputString.isEmpty)
+      inputString.toInt
+    else
+      0
   }
 
 }

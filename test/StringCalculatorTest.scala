@@ -16,8 +16,11 @@ class StringCalculatorTest extends Specification with ShouldMatchers {
   "The add method" should {
     "return the sum of zero numbers as 0" in {
       val result: Int = stringCalculator.add("")
-      result must beEqualTo(0)
-
+      result mustEqual 0
+    }
+    "return one number if the string has one number" in {
+      val result: Int = stringCalculator.add("1")
+      result mustEqual 1
     }
   }
 
