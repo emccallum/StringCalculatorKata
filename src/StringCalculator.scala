@@ -17,6 +17,11 @@ class StringCalculator {
         for (string <- parsedIntegers)
           result += add(string)
       }
+      else if (inputString.contains("\n")) {
+        val parsedIntegers: Array[String] = inputString.split("\n")
+        for (string <- parsedIntegers)
+          result += add(string)
+      }
       else
         result = inputString.toInt
     }

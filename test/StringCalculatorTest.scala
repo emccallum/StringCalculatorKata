@@ -30,6 +30,10 @@ class StringCalculatorTest extends Specification with ShouldMatchers {
       val result: Int = stringCalculator.add("1,2,3,4,5")
       result mustEqual 15
     }
+    "return the sum of multiple numbers if newline-delimited string" in {
+      val result: Int = stringCalculator.add("1\n2,3")
+      result mustEqual 6
+    }
   }
 
 }
