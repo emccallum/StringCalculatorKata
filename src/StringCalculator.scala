@@ -10,10 +10,17 @@ import java.io.PrintStream
 class StringCalculator {
 
   def add(inputString: String): Int = {
-    if(!inputString.isEmpty)
-      inputString.toInt
-    else
-      0
+    var result = 0
+    if (!inputString.isEmpty) {
+      if (inputString.contains(",")) {
+        val parsedIntegers: Array[String] = inputString.split(",")
+        for (string <- parsedIntegers)
+          result += add(string)
+      }
+      else
+        result = inputString.toInt
+    }
+    result
   }
 
 }

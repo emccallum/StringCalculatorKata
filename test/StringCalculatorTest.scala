@@ -22,6 +22,10 @@ class StringCalculatorTest extends Specification with ShouldMatchers {
       val result: Int = stringCalculator.add("1")
       result mustEqual 1
     }
+    "return the sum of two numbers if the string has two numbers" in {
+      val result: Int = stringCalculator.add("1,2")
+      result mustEqual 3
+    }
   }
 
 }
